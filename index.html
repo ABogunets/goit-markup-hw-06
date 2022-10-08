@@ -415,6 +415,21 @@
             </li>
           </ul>
         </div>
+        <!--Footer-form-->
+        <div class="footer-form">
+          <p class="title">
+            <strong>підпишиться на розсилку</strong>
+          </p>
+          <div class="email-container">
+            <form class="js-speaker-form">
+              <div class="email-form">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" autocomplete="on" />
+              </div>
+            </form>
+            <button type="button" class="button">Підписатися</button>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- Backdrop and modal window-->
@@ -428,5 +443,16 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+
+          e.currentTarget.reset();
+        });
+      })();
+    </script>
   </body>
 </html>
