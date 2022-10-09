@@ -418,16 +418,21 @@
         <!--Footer-form-->
         <div class="footer-form">
           <p class="title">
-            <strong>підпишиться на розсилку</strong>
+            <strong>підпишіться на розсилку</strong>
           </p>
           <div class="email-container">
             <form class="js-speaker-form">
               <div class="email-form">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" autocomplete="on" />
+                <label for="footer-email">E-mail</label>
+                <input type="email" name="email" id="footer-email" autocomplete="on" />
               </div>
             </form>
-            <button type="button" class="button">Підписатися</button>
+            <button type="button" class="button">
+              Підписатися
+              <svg class="icons" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -440,6 +445,39 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <!-- form -->
+        <form class="modalform js-speaker-form">
+          <h2 class="modalform-title">Залиште свої дані, ми вам передзвонимо</h2>
+          <div class="modalform-field">
+            <label for="name">Ім'я</label>
+            <input class="modalform-input" type="text" name="user-name" id="name" autofocus />
+          </div>
+          <div class="modalform-field">
+            <label for="tel">Телефон</label>
+            <input class="modalform-tel" type="tel" name="tel" id="tel" />
+          </div>
+          <div class="modalform-field">
+            <label for="email">Пошта</label>
+            <input class="modalform-email" type="email" name="email" id="email" autocomplete="on" />
+          </div>
+          <div class="modalform-field">
+            <label for="text">Коментар</label>
+            <textarea
+              class="modalform-comment"
+              name="comment"
+              id="text"
+              rows="8"
+              placeholder="Введіть текст"
+            ></textarea>
+          </div>
+          <div class="modalform-field">
+            <input class="modalform-policy" type="checkbox" name="" id="policy" />
+            <label class="policy-label" for="policy"
+              >Погоджуюся з розсилкою та приймаю Умови договору</label
+            >
+          </div>
+          <button class="modalform-button" type="submit">Відправити</button>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
