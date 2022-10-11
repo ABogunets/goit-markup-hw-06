@@ -34,6 +34,24 @@ body {
 img {
     display: block;
 }
+.button {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    
+    background-color: var(--accent-text-color);
+    color: var(--primary-bkgd-color);
+    
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+
+    cursor: pointer;
+    transition: background-color var(--duration) var(--timing-function);
+
+}
 /* Utilites */
 .list {
     list-style: none;
@@ -174,23 +192,7 @@ img {
 }
 .hero .button {
     padding: 10px 32px;
-
     min-width: 216px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-    background-color: var(--accent-text-color);
-    color: var(--primary-bkgd-color);
-
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.9;
-    letter-spacing: 0.06em;
-    cursor: pointer;
-
-    transition: background-color var(--duration) var(--timing-function);
 }
 .hero .button:hover,
 .hero .button:focus {
@@ -499,42 +501,32 @@ address {
 .footer-form {
     width: 570px;
     height: 86px;
-    margin-left: 200px;
-
-    /* outline: 1px solid tomato; */
+    margin-left: 93px;
 }
-.email-container {
+.email-wrap {
     display: flex;
-    margin-top: 20px;
-    gap: 12px;
-
-    /* outline: 1px solid teal; */
-}
-.email-form {
-    display: flex;
-    width: 358px;
     height: 50px;
-    margin-left: 0;
+    margin-top: 20px;
+}
+.email-wrap input {
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
+    outline: none;
+    width: 358px;
     padding: 15px 0px 15px 16px;
-}
-.email-form label,
-.email-form input {
+    margin-right: 12px;
+
+    background-color: var(--secondary-bkgd-color);
     color: rgba(255, 255, 255, 0.6);
+
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
 }
-.email-form input {
-    border: 0;
-    padding:0;
-    padding-left: 10px;
-    background-color: var(--secondary-bkgd-color);
-
-    color: rgba(255, 255, 255, 0.6);
-        /* outline: 1px solid aqua; */
+.email-wrap input:focus {
+    border: 1px solid var(--primary-bkgd-color);
+    color: var(--primary-bkgd-color);
 }
 .footer-form .button {
     display: flex;
@@ -542,29 +534,19 @@ address {
     align-items: center;
     justify-content: center;
     width: 200px;
-
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     
     background-color: var(--accent-text-color);
     color: var(--primary-bkgd-color);
-    
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.9;
-
-    letter-spacing: 0.06em;
-    cursor: pointer;
-
-    transition: background-color var(--duration) var(--timing-function);
+}
+.footer-form .button:hover {
+    background-color: var(--herobutton-accent-color);
+}
+.footer-form .button:focus {
+    background-color: var(--herobutton-accent-color);
 }
 .footer-form .icons {
     margin-left: 10px;
 }
-
-
 
 
 /* BACKDROP & modal window */
@@ -635,7 +617,7 @@ address {
 }
 .modalform-title {
     margin:0;
-
+    margin-bottom: 12px;
 
     font-weight: 700;
     font-size: 20px;
@@ -648,23 +630,9 @@ address {
 .modalform-field {
     display: flex;
     flex-direction: column;
-    /* outline: 1px solid tomato; */
-
 }
-.modalform-input,
-.modalform-email,
-.modalform-tel,
-.modalform-comment {
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-.modalform label,
-.modalform-input,
-.modalform-tel,
-.modalform-comment,
-.modalform-policy {
-
+.modalform-label,
+.modalform-input {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16;
@@ -672,21 +640,86 @@ address {
 
     color: var(--primary-text-color);
 }
-.modalform label {
-    margin-bottom: 4px;
+.modalform-wrap {
+    margin-top: 4px;
+    margin-bottom: 10px;
 }
-.modalform-comment {
-    padding: 12px 16px ;
+.modalform-input {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 12px 12px 42px;
+    outline: none;
+    width: 100%;
 }
-.modalform-comment::placeholder{ 
+.modalform-input:focus {
+    border: 1px solid var(--accent-text-color);
+}
+.modalform-wrap {
+    position: relative;
+}
+.modalform-icon {
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 12px;
+    transform: translate(0, -50%);
+
+    fill: var(--secondary-text-color);
+}
+.modalform-input:focus+.modalform-icon {
+    fill: var(--accent-text-color);
+}
+.modalform .comment {
+    margin-top: 4px;
+    padding-left: 16px;
+    height: 120px;
+    resize: none;
+}
+.modalform .comment::placeholder{ 
     color: rgba(117, 117, 117, 0.5);
 }
-.modalform .policy-label {
+/* form-checkbox */
+.modalform-checkbox {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.modalform .checkbox-link {
+    color: var(--accent-text-color);
+    margin-left: 5px;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
     font-size: 14px;  
     letter-spacing: 0.03em;
-
 }
-.modalform-button {
+.checkbox {
+    display: flex;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--secondary-text-color);
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7px;
+}
+.checkbox svg {
+    display: none;
+}
+.checkbox-input:checked + .checkbox-label .checkbox {
+    border: none;
+    background-color: var(--accent-text-color);
+}
+.checkbox-input:checked + .checkbox-label .checkbox svg{
+    display: flex;
+}
+
+/* form-button */
+.modalform .button {
     padding: 10px 52px;
 
     margin-top: 30px;
@@ -695,23 +728,12 @@ address {
 
     min-width: 200px;
     display: flex;
-
-    border: none;
-    border-radius: 4px;
-     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    
-    background-color: var(--accent-text-color);
-    color: var(--primary-bkgd-color);
-    
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.9;
-    letter-spacing: 0.06em;
-    cursor: pointer;
-    
-    transition: background-color var(--duration) var(--timing-function);
 }
+.modalform .button:hover {
+    background-color: var(--herobutton-accent-color);
+}
+.modalform .button:focus {
+    background-color: var(--herobutton-accent-color);
 }
 
 /* PORTFOLIO PAGE */
@@ -727,19 +749,14 @@ address {
 .portfolio .button {
     padding: 6px 22px;
     min-width: 73px;
-    border: none;
-    border-radius: 4px;
 
     background-color: var(--team-bkgd-color);
+    box-shadow: none;
 
-    font-family: inherit;
     color: var(--secondary-text-color);
     font-weight: 500;
-    font-size: 16px;
     line-height: 1.6;
-    text-align: center;
     letter-spacing: 0.03em;
-    cursor: pointer;
 
     transition: background-color var(--duration) var(--timing-function), color var(--duration) var(--timing-function), box-shadow var(--duration) var(--timing-function);
 }

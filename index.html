@@ -420,20 +420,18 @@
           <p class="title">
             <strong>підпишіться на розсилку</strong>
           </p>
-          <div class="email-container">
-            <form class="js-speaker-form">
-              <div class="email-form">
-                <label for="footer-email">E-mail</label>
-                <input type="email" name="email" id="footer-email" autocomplete="on" />
-              </div>
-            </form>
-            <button type="button" class="button">
-              Підписатися
-              <svg class="icons" width="24" height="24">
-                <use href="./images/icons.svg#icon-send"></use>
-              </svg>
-            </button>
-          </div>
+          <form class="js-speaker-form">
+            <div class="email-wrap">
+              <label for="footer-email"></label>
+              <input type="email" name="email" id="footer-email" placeholder="E-mail" />
+              <button type="submit" class="button">
+                Підписатися
+                <svg class="icons" width="24" height="24">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </footer>
@@ -449,34 +447,55 @@
         <form class="modalform js-speaker-form">
           <h2 class="modalform-title">Залиште свої дані, ми вам передзвонимо</h2>
           <div class="modalform-field">
-            <label for="name">Ім'я</label>
-            <input class="modalform-input" type="text" name="user-name" id="name" autofocus />
+            <label class="modalform-label" for="name">Ім'я</label>
+            <div class="modalform-wrap">
+              <input class="modalform-input" type="text" name="user-name" id="name" autofocus />
+              <svg class="modalform-icon">
+                <use href="./images/icons.svg#icon-person-black"></use>
+              </svg>
+            </div>
           </div>
           <div class="modalform-field">
-            <label for="tel">Телефон</label>
-            <input class="modalform-tel" type="tel" name="tel" id="tel" />
+            <label class="modalform-label" for="tel">Телефон</label>
+            <div class="modalform-wrap">
+              <input class="modalform-input" type="tel" name="tel" id="tel" />
+              <svg class="modalform-icon">
+                <use href="./images/icons.svg#icon-phone-black"></use>
+              </svg>
+            </div>
           </div>
           <div class="modalform-field">
-            <label for="email">Пошта</label>
-            <input class="modalform-email" type="email" name="email" id="email" autocomplete="on" />
+            <label class="modalform-label" for="email">Пошта</label>
+            <div class="modalform-wrap">
+              <input class="modalform-input" type="email" name="email" id="email" />
+              <svg class="modalform-icon">
+                <use href="./images/icons.svg#icon-email-black"></use>
+              </svg>
+            </div>
           </div>
           <div class="modalform-field">
-            <label for="text">Коментар</label>
+            <label class="modalform-label" for="text">Коментар</label>
             <textarea
-              class="modalform-comment"
+              class="modalform-input comment"
               name="comment"
               id="text"
               rows="8"
               placeholder="Введіть текст"
             ></textarea>
           </div>
-          <div class="modalform-field">
-            <input class="modalform-policy" type="checkbox" name="" id="policy" />
-            <label class="policy-label" for="policy"
-              >Погоджуюся з розсилкою та приймаю Умови договору</label
-            >
+          <div class="modalform-checkbox">
+            <input class="checkbox-input visually-hidden" type="checkbox" name="" id="checkbox" />
+            <label class="checkbox-label" for="checkbox">
+              <span class="checkbox">
+                <svg width="16" height="15">
+                  <use href="./images/icons.svg#icon-checked"></use>
+                </svg>
+              </span>
+              Погоджуюся з розсилкою та приймаю
+              <a href="" class="checkbox-link"> Умови договору</a>
+            </label>
           </div>
-          <button class="modalform-button" type="submit">Відправити</button>
+          <button type="submit" class="button">Відправити</button>
         </form>
       </div>
     </div>
